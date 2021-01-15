@@ -6,6 +6,7 @@ namespace App\Controller;
 
 
 use App\Entity\Product;
+use App\Repository\ProductRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -43,7 +44,7 @@ class SearchController extends AbstractController
                 'attr'=>[
                     'placeholder'=>'Search',
                     'autocomplete'=>'off',
-                    'class'=>'form-control mr-sm-2 w-50 p-3',
+                    'class'=>'search',
                 ],
                 'method'=>'POST',
                 'action'=>$this->generateUrl('app_searchlist')
@@ -63,7 +64,7 @@ class SearchController extends AbstractController
     /**
      * @Route("/search/list",name="app_searchlist")
      */
-    public function handleSearch(Request $request, TruckRepository $truckRepository){
+    public function handleSearch(Request $request, ProductRepository $productRepository){
         $query = $request->get('form')['query'];
         $filter = $request->get('form')['SearchBy'];
         if($query){

@@ -1,20 +1,24 @@
 {% extends "base.html.twig" %}
+{% block stylesheets %}
+    <link href="{{ asset('css/home.css') }}" rel="stylesheet"/>
+{% endblock %}
 {% block content%}
-    <h2>Trucks</h2>
-    <img src="{{ asset('images/trucks.jpg') }}" alt="shoping" style="border-radius: 35%; width: 500px; height: 200px">
-    <p>
-        Maksatbek Bolushov
-        1704.01001
-    </p>
-    <p>
-        Computer Engineering
-    </p>
-    <h3>Info</h3>
-    <ul>
-        <li>From Osh</li>
-        <li>0773 00 69 19</li>
-        <li>bekanur98@bk.ru</li>
-    </ul>
-    <p>Example of homepage. Example of homepage. Example of homepage</p>
+    <div class="home-container">
+        <img src="{{ asset('images/trucks.jpg') }}" alt="shoping">
+        <p>
+            Maksatbek Bolushov
+            1704.01001
+        </p>
+        <p>
+            Computer Engineering
+        </p>
+        <h3>Info</h3>
+        <ul>
+            <li>From Osh</li>
+            <li>0773 00 69 19</li>
+            <li>bekanur98@bk.ru</li>
+        </ul>
+        <p>Example of homepage. Example of homepage. Example of homepage</p>
+    </div>
 
 {% endblock %}
