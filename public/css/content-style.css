@@ -1,0 +1,52 @@
+#customers {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+/*#customers tr:hover {background-color: #ddd;}*/
+
+#customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+
+thead:nth-child(1) td{
+    padding-left: 0 !important;
+}
+
+td form input{
+    padding: 10px;
+    border: none;
+    outline: none;
+    background-color: #40b3a2;
+    font-size: 1.2em;
+    transform: translateY(-2px);
+    box-shadow: 1px 5px 2px rgba(0,0,0,0.3);
+    border-radius: 100px;
+}
+td form input:hover{
+    cursor: pointer;
+}
+td form input:active{
+    transform: translateY(0px);
+    box-shadow: none;
+}
+td a{
+    width: 100%;
+
+}
+.action{
+    display: flex;
+    justify-content: space-between;
+}

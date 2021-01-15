@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Product index{% endblock %}
+
+{% block content %}
+
+
+
+    {#    {% for message in app.flashes('info') %}#}
+    {#        <div class="alert alert-success">#}
+    {#            {{ message }}#}
+    {#        </div>#}
+    {#    {% endfor %}#}
+
+    <table id="customers">
+        <thead>
+        <tr>
+            <td>
+                <form action="{{ path('create_product') }}">
+                    <input type="submit" value="Add new Product"/>
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Date</th>
+            <th>Description</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for product in products %}
+            <tr>
+                <td>{{ product.id }}</td>
+                <td>{{ product.name }}</td>
+                <td>{{ product.price }}</td>
+                <td>{{ product.data|date("m/d/Y") }}</td>
+                <td>{{ product.description }}</td>
+                <td class="action">
+                    <a href="{{ path('product_update', {'id': product.id}) }}">Update</a>
+                    <a href="{{ path('product_show', {'id': product.id}) }}">Show</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td>no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+
+{% endblock %}

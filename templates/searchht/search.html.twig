@@ -1,0 +1,13 @@
+{% extends "base.html.twig" %}
+{% block content%}
+    <h2>
+        Product search form
+    </h2>
+    {{ form_start(product_form) }}
+    {{ form_widget(product_form.query) }}
+    {{ form(product_form) }}
+    {{ form_end(product_form) }}
+    <br>
+
+
+{% endblock %}
