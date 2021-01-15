@@ -25,11 +25,6 @@ class ProductController extends AbstractController
     {
 
         $products = $productRepository->findAll();
-        if (!$products) {
-            throw $this->createNotFoundException(
-                'No product found '
-            );
-        }
 
         return $this->render('product/index.html.twig', ['products' => $products]);
     }
